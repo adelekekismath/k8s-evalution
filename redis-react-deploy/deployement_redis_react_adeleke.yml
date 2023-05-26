@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-react-adeleke
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: redis-react-adeleke
+  template:
+    metadata:
+      labels:
+        app: redis-react-adeleke
+    spec:
+      imagePullSecrets:
+      - name: regcredadeleke
+      containers:
+        - name: redis-react-adeleke
+          image: cloud.canister.io:5000/kadeleke/redis-react
+          ports:
+            - containerPort: 3000
+
+

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-redis-adeleke
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-redis-adeleke
+  template:
+    metadata:
+      labels:
+        app: node-redis-adeleke
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: node-redis-adeleke
+        image: cloud.canister.io:5000/arhturescriou/node-redis
+        ports:
+        - containerPort: 6379
+        env:
+        - name: PORT
+          value: "6379"
+        - name: REDIS_URL
+          value: "redis://redis-adeleke:6379"
