@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/redis-react/node_modules
+/redis-react/.pnp
+/redis-react.pnp.js
+
+# testing
+/redis-react/coverage
+
+# production
+/redis-react/build
+
+# misc
+/redis-react/.DS_Store
+/redis-react/.env.local
+/redis-react/.env.development.local
+/redis-react/.env.test.local
+/redis-react/.env.production.local
+
+/redis-react/npm-debug.log*
+/redis-react/yarn-debug.log*
+/redis-react/yarn-error.log*
